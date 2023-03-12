@@ -1,6 +1,8 @@
 import "./LandingPage.css";
 import Navbar from "../Navbar/Navbar";
 import { BsArrowRight } from "react-icons/bs";
+import LandingCompetitons from "./Competitions/LandingCompetitions";
+import LandingProposal from "./Proposal/LandingProposal";
 
 export default function LandingPage() {
   return (
@@ -30,6 +32,10 @@ export default function LandingPage() {
             </div>
           </div>
         </div>
+      </section>
+      <section className="landing-others">
+        <LandingCompetitons/>
+        <LandingProposal/>
       </section>
     </>
   );

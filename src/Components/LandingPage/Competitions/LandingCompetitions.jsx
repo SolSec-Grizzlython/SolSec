@@ -1,7 +1,7 @@
 import "./LandingCompetitions.css";
 import CompetitionsCard from "./CompetitionsCards/CompetitionsCard";
 
-export default function LandingAbout(){
+export default function LandingCompetitions(){
     return(
         <>
         <section className="landing-competitions-container">
@@ -10,7 +10,12 @@ export default function LandingAbout(){
                 <h1 className="landing-competitions-heading">Start Competing</h1>
             </div>
             <div className="landing-competitions-cards">
-                <CompetitionsCard/>
+                <div className="grid">
+                  <CompetitionsCard/>
+                  <CompetitionsCard/>
+                  <CompetitionsCard/>
+                  <CompetitionsCard/>
+                </div>
             </div>
          </div>
         </section>
