@@ -5,16 +5,22 @@ import InputBox from "../InputBox/InputBox";
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [name,setName] = useState("");
+    const [walletAddress,setWalletAddress] = useState("");
+    
     return (
         <div>
             <form>
+                <label>Name*</label>
+                <InputBox type="text" placeholder="Enter Your Name" />
                 <label>Email ID*</label>
                 <InputBox type="text" placeholder="Enter Your Email ID" />
-                <label>Password*</label>
+                <label>Wallet Address*</label>
+                <InputBox type="text" placeholder="Enter Your Wallet Address" />
+                <label>Create Password*</label>
                 <InputBox type="password" placeholder="Enter Your Password" />
-                <p className={style.forgot}>Forgot Password?</p>
                 <button className={style.loginBtn} type="submit">Login</button>
-                <p className={style.signup}>Don't have an account? <a href="#">Sign Up</a></p>
+                <p>Already have an account? <a href="#">Login</a></p>
             </form>
         </div>
     );

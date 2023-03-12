@@ -1,0 +1,16 @@
+.loginBtn {
+  background: #882544;
+  border-radius: 4px;
+  color: #fff;
+  width: 490px;
+  height: 43px;
+  border: none;
+  padding: 0 5%;
+}
+
+.forgot{
+    text-align: end;
+}
+.signup{
+    text-align: center;
+}
