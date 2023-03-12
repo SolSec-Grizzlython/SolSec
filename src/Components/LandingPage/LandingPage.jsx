@@ -1,9 +1,11 @@
 import "./LandingPage.css";
+import Navbar from "../Navbar/Navbar";
 import { BsArrowRight } from "react-icons/bs";
 
 export default function LandingPage() {
   return (
     <>
+    <Navbar />
       <section className="landingPage-container main-container">
         <div className="landing-about-container">
           <div className="landing-about-content">

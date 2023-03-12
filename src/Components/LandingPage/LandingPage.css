@@ -1,6 +1,6 @@
 .landingPage-container {
   background-color: #0c0c18;
-  width: 100vw;
+  width: auto;
   height: 100vh;
   display: flex;
   align-items: center;
