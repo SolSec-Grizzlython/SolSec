@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+}
+.landing-competitions-container {
+  margin-top: 0;
+  display: flex;
+  /* flex-direction: column; */
+  /* border: 2px solid white; */
+  align-items: center;
+  justify-content: center;
+  /* position: relative; */
+}
+.landing-competitions-box {
+  border: 2px solid white;
+  width: 80vw;
+  height: 75vh;
+  margin-top: 15vh;
+}
+.landing-competitions-heading {
+  position: absolute;
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 4rem;
+  line-height: 5.25rem;
+  color: #e9e9e9;
+}
