@@ -40,13 +40,28 @@ export default function Contest() {
         });
     }
 
+    const participate = () => {
+        axios.patch(`http://localhost:4000/auditor/participate/${id}`)
+        .then((res) => {
+            console.log(res);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+    }
+
     return (
         <div>
             <h1>{contest?.name}</h1>
             <p>{contest?.description}</p>
             <p>The status of the contest is : {contestStatus}</p>
+
+            {/* Only for Protocol */}
             {contestStatus < 3 ? (<button onClick={startContest}>Start</button>) : (null)}
             {(contestStatus === 3)? (<button onClick={endContest}>End</button>) : (null)}
+
+            {/* Only for auditors */}
+            <button onClick={participate}>Participate</button>
         </div>
     );
 }

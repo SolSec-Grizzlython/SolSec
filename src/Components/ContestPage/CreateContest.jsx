@@ -20,8 +20,8 @@ export default function ContestForm() {
             repoLink
            
         };
-
-        axios.post('http://localhost:4000/contest/create', contest)
+        let token = localStorage.getItem('token');
+        axios.post('http://localhost:4000/contest/create', {contest, headers: {Authorization: `Bearer ${token}`}})
         .then((res) => {
             console.log(res);
         })
