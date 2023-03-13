@@ -4,14 +4,17 @@ import { useParams } from 'react-router-dom';
 export default function Contest() { 
     const [contest, setContest] = useState();
     const [contestStatus, setContestStatus] = useState();
+    const [currentUser, setCurrentUser] = useState();
     const { id } = useParams();
 
     useEffect(() => {
         const token = localStorage.getItem('token');
-        axios.get(`http://localhost:4000/contest/get/${id}`,{contest, headers: {Authorization: `Bearer ${token}`}})
+        axios.post(`http://localhost:4000/contest/get/${id}`,{contest, headers: {Authorization: `Bearer ${token}`}})
         .then((res) => {
             setContest(res.data.data.contest);
             setContestStatus(res.data.data.contest.contestStatus);
+            console.log(res.data.user);
+            setCurrentUser(res.data.user);
         })
         .catch((err) => {
             console.log(err);
@@ -56,13 +59,15 @@ export default function Contest() {
             <h1>{contest?.name}</h1>
             <p>{contest?.description}</p>
             <p>The status of the contest is : {contestStatus}</p>
+            
 
             {/* Only for Protocol */}
-            {contestStatus < 3 ? (<button onClick={startContest}>Start</button>) : (null)}
-            {(contestStatus === 3)? (<button onClick={endContest}>End</button>) : (null)}
+            {contestStatus < 3 && currentUser.role === 'protocol' ? (<button onClick={startContest}>Start</button>) : (null)}
+            {(contestStatus === 3 && currentUser.role === 'protocol')? (<button onClick={endContest}>End</button>) : (null)}
 
             {/* Only for auditors */}
-            <button onClick={participate}>Participate</button>
+            {contestStatus === 3 && currentUser.role === 'auditor' ? (<button onClick={participate}>Participate</button>) : (null)
+            }
         </div>
     );
 }
