@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import style from "./Login.module.css";
-import InputBox from "../InputBox/InputBox";
+import InputBox from "../InputBox/InputBox" 
 import Modal from "../Modal/Modal";
 import axios from "axios";
 import { Link } from "react-router-dom";

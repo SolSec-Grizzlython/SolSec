@@ -9,11 +9,12 @@ const Register = () => {
     const [password, setPassword] = useState("");
     const [name,setName] = useState("");
     const [walletAddress,setWalletAddress] = useState("");
-    const [role, setRole] = useState("");
+    const [role, setRole] = useState("protocol");
 
     const handleSubmit = (e) => {
+        console.log("called1");
         e.preventDefault();
-        axios.post("http://localhost:5000/auth/signup", {email: email,password: password,name: name,walletAddress: walletAddress, role: role})
+        axios.post("http://localhost:4000/auth/signup", {email: email,password: password,name: name,walletAddress: walletAddress, role: role})
         .then((res) => {
             localStorage.setItem("token", res.data.token);
 
@@ -30,7 +31,7 @@ const Register = () => {
             <Link className={style.close} to="/">&times;</Link>
             <h1>Signup</h1>
             <section>        <div>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <label>Name*</label>
                 <InputBox type="text" placeholder="Enter Your Name" onChange={(e) => setName(e.target.value)}/>
                 <label>Email ID*</label>
@@ -38,8 +39,12 @@ const Register = () => {
                 <label>Wallet Address*</label>
                 <InputBox type="text" placeholder="Enter Your Wallet Address" onChange={(e) => setWalletAddress(e.target.value)} />
                 <label>Create Password*</label>
-                <InputBox type="password" placeholder="Enter Your Password" />
-                <button className={style.loginBtn} type="submit">Login</button>
+                <InputBox type="password" placeholder="Enter Your Password" onChange={(e) => setPassword(e.target.value)}/>
+
+                <label>Role*</label>
+               
+
+                <button className={style.loginBtn} type="submit">Submit</button>
                 <p>Already have an account? <Link to="/login">Login</Link></p>
             </form>
         </div></section>

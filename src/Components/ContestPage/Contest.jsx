@@ -7,7 +7,8 @@ export default function Contest() {
     const { id } = useParams();
 
     useEffect(() => {
-        axios.get(`http://localhost:4000/contest/get/${id}`)
+        const token = localStorage.getItem('token');
+        axios.get(`http://localhost:4000/contest/get/${id}`,{contest, headers: {Authorization: `Bearer ${token}`}})
         .then((res) => {
             setContest(res.data.data.contest);
             setContestStatus(res.data.data.contest.contestStatus);
