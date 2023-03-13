@@ -3,6 +3,8 @@ import Navbar from "../Navbar/Navbar";
 import { BsArrowRight } from "react-icons/bs";
 import LandingCompetitons from "./Competitions/LandingCompetitions";
 import LandingProposal from "./Proposal/LandingProposal";
+import LandingJudge from "./Judge/LandingJudge";
+import LandingContact from "./Contact/LandingContact";
 
 export default function LandingPage() {
   return (
@@ -36,6 +38,8 @@ export default function LandingPage() {
       <section className="landing-others">
         <LandingCompetitons/>
         <LandingProposal/>
+        <LandingJudge/>
+        <LandingContact/>
       </section>
     </>
   );

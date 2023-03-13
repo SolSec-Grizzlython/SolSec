@@ -1,8 +1,14 @@
-import React from "react";
+import React,{useState} from "react";
 import style from "./Navbar.module.css";
 import logo from "./assets/discord.svg";
+import Modal from "../Modal/Modal";
+import Login from "../Forms/Login";
+import Signup from "../Forms/Signup";
 
 const Navbar = () => {
+  const [show, setShow] = useState();
+  const loginForm = <Login />;
+  const signupForm = <Signup />;
   return (
     <div className={style.container}>
       <div className={style.title}>SolSec</div>
@@ -18,7 +24,10 @@ const Navbar = () => {
             </div>
           </li>
           <li>
-            <button className={style.login}>Login</button>
+            <button className={style.login} onClick={() => setShow(true)}>
+              Login
+            </button>
+            <Modal show={show} closeModal={() => setShow(false)} heading="Login" content={loginForm}/>
           </li>
         </ul>
       </div>

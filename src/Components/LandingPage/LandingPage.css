@@ -131,3 +131,20 @@
 .landing-others{
   background-color: #0c0c18;
 }
+.landing-about-left-box:hover, .landing-about-right-box:hover {
+  display: flex;
+  justify-content: center;
+  color: white;
+  width: 20vw;
+  height: 40vh;
+  position: absolute;
+  top: 0;
+  border-radius: 1.25rem;
+  background: linear-gradient(
+      180deg,
+      #882544 5.14%,
+      rgba(136, 37, 68, 0) 107.5%
+    ),
+    #0c0c18;
+  box-shadow: 0px 0px 36px rgba(0, 0, 0, 0.71);
+}
