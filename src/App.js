@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import LandingPage from "./Components/LandingPage/LandingPage";
 import Contests from "./Components/ContestPage/Contests";
-import CreateContest from "./Components/ContestPage/CreateContest";
+// import CreateContest from "./Components/ContestPage/CreateContest";
+import StartProposal from "./Components/StartProposal/StartProposal";
 import Contest from "./Components/ContestPage/Contest";
 import Register from "./Components/Forms/Signup";
 import Login from "./Components/Forms/Login";
@@ -20,7 +21,7 @@ function App() {
 
       <Route path="/contests" Component={Contests} />
       <Route path="/contest/:id" Component={Contest}></Route>
-      <Route path="/createContest" Component={CreateContest} />
+      <Route path="/createContest" Component={StartProposal} />
     </Routes>
   );
 }
