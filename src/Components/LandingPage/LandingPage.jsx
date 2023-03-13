@@ -5,6 +5,7 @@ import LandingCompetitons from "./Competitions/LandingCompetitions";
 import LandingProposal from "./Proposal/LandingProposal";
 import LandingJudge from "./Judge/LandingJudge";
 import LandingContact from "./Contact/LandingContact";
+import { Outlet } from "react-router-dom";
 
 export default function LandingPage() {
   return (
@@ -41,6 +42,7 @@ export default function LandingPage() {
         <LandingJudge/>
         <LandingContact/>
       </section>
+      <Outlet/>
     </>
   );
 }

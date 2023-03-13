@@ -4,9 +4,11 @@ import logo from "./assets/discord.svg";
 import Modal from "../Modal/Modal";
 import Login from "../Forms/Login";
 import Signup from "../Forms/Signup";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [show, setShow] = useState();
+  const [open, setopen] = useState();
   const loginForm = <Login />;
   const signupForm = <Signup />;
   return (
@@ -25,9 +27,13 @@ const Navbar = () => {
           </li>
           <li>
             <button className={style.login} onClick={() => setShow(true)}>
+              <Link to="/login">
               Login
+              </Link>
             </button>
-            <Modal show={show} closeModal={() => setShow(false)} heading="Login" content={loginForm}/>
+            {/* <Modal show={show} closeModal={() => setShow(false)} heading="Login" content={loginForm}/>
+            <Modal show={open} closeModal={() => setopen(false)} heading="Signup" content={signupForm}/> */}
+
           </li>
         </ul>
       </div>
