@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import style from "./Login.module.css";
 import InputBox from "../InputBox/InputBox";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Register = () => {
     const [email, setEmail] = useState("");
@@ -23,7 +24,12 @@ const Register = () => {
 
     
     return (
-        <div>
+
+        <div className={style.modal}>
+        <div className={style.modalContent}>
+            <Link className={style.close} to="/">&times;</Link>
+            <h1>Signup</h1>
+            <section>        <div>
             <form>
                 <label>Name*</label>
                 <InputBox type="text" placeholder="Enter Your Name" onChange={(e) => setName(e.target.value)}/>
@@ -32,13 +38,14 @@ const Register = () => {
                 <label>Wallet Address*</label>
                 <InputBox type="text" placeholder="Enter Your Wallet Address" onChange={(e) => setWalletAddress(e.target.value)} />
                 <label>Create Password*</label>
-                <InputBox type="password" placeholder="Enter Your Password" onChange={(e) => setPassword(e.target.value)}/>
-                <label>Role*</label>
-                <InputBox type="text" placeholder="Enter Your Role" onChange={(e) => setRole(e.target.value)}/>
-                <button className={style.loginBtn} onClick={handleSubmit} type="submit">Login</button>
-                <p>Already have an account? <a href="#">Login</a></p>
+                <InputBox type="password" placeholder="Enter Your Password" />
+                <button className={style.loginBtn} type="submit">Login</button>
+                <p>Already have an account? <Link to="/login">Login</Link></p>
             </form>
+        </div></section>
         </div>
+    </div>
+
     );
     };
 
