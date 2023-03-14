@@ -4,7 +4,7 @@ import img from "./Images/Rectangle 2.png";
 export default function LandingJudge() {
     return (
         <>
-         <section className="landing-judge-container">
+         <section className="landing-judge-container" id="landing-judge">
             <div className="landing-judge-box">
                 <div className="landing-judge-image">
                     <img src={img} alt="" className="landing-judge-img" />

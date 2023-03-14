@@ -55,3 +55,15 @@
   text-decoration: none;
   color: white;
 }
+
+.title{
+  text-decoration: none;
+  color: white;
+}
+
+.hamburger-menu-item{
+  border: 1px solid var(--orange);
+  border-top: 0;
+  background-color: white;
+  padding: 10px 40px 10px 10px;
+}

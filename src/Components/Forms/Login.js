@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import style from "./Login.module.css";
-import InputBox from "../InputBox/InputBox" 
+import InputBox from "../InputBox/InputBox";
 import Modal from "../Modal/Modal";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
@@ -23,6 +24,8 @@ const Login = () => {
       .catch((err) => {
         console.log(err.response, ", status", err.response);
       });
+
+    navigate("/");
   };
 
   return (
