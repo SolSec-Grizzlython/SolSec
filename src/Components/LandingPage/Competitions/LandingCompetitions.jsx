@@ -5,7 +5,7 @@ import { BsArrowRight } from "react-icons/bs";
 export default function LandingCompetitions(){
     return(
         <>
-        <section className="landing-competitions-container">
+        <section className="landing-competitions-container" id="landing-competition">
          <div className="landing-competitions-box">
             <div className="landing-competitions-head">
                 <h1 className="landing-competitions-heading">Start Competing</h1>

@@ -1,14 +1,14 @@
 .compete-container {
   background-color: #0c0c18;
   width: auto;
-  height: 100vh;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .compete-box {
-  width: 90vw;
-  height: 90vh;
+  width: 75vw;
+  height: auto;
 }
 .competition-name {
   font-family: "Nunito Sans";
@@ -45,12 +45,136 @@
   border-radius: 4px;
   margin-top: 1vh;
 }
-.competition-details{
-    border: 2px solid white;
-    width: 90vw;
-    height: 75vh;
+.competition-details {
+  width: 75vw;
+  height: auto;
+  display: flex;
+  /* justify-content: center;
+    align-items: center; */
+  flex-direction: row;
+  margin-top: 2vh;
+  position: relative;
+}
+.protocol-details {
+  /* display: flex;
+  flex-direction: column; */
+  height: auto;
+  width: 45vw;
+}
+.protocol-img {
+  width: 42vw;
+  height: 35vh;
+}
+.protocol-content {
+  background: #1b1b26;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  width: 42vw;
+  height: 65vh;
+  margin-top: 2vh;
+  margin-bottom: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 49px;
+  color: rgba(233, 233, 233, 0.8);
+}
+.price-details {
+  background: #1b1b26;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  height: 45vh;
+  width: 31vw;
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.pool-prize {
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.3rem;
+  line-height: 33px;
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.9);
+}
+.vertical-line {
+  border-left: 4px solid #882544;
+  height: 10vh;
+}
+.competition-dates {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2vh;
+}
+.competition-duration {
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.1rem;
+  line-height: 27px;
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.8);
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin-left: 0.7vw;
+}
+.buttons{
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: row;
+    margin-top: 2vh;
+}
+.findings {
+  display: flex;
+  align-items: center;
+  padding: 4px 12px;
+  gap: 10px;
+  background: #882544;
+  border-radius: 4px;
+
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5em;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  border: none;
+  
+}
+.repository {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 4px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 4px;
+
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5em;
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.8);
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  background: none;
+  margin-left: 1vw;
 }

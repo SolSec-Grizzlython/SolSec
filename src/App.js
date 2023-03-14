@@ -13,6 +13,7 @@ import Signup from "./Components/Forms/Signup";
 import Modal from "./Components/Modal/Modal";
 import Competitions from "./Components/Competitions/Competitions";
 import Compete from "./Components/Compete/Compete";
+
 function App() {
   return (
     <Routes>

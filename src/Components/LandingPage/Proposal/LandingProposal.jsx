@@ -4,7 +4,7 @@ import img from "./Images/Rectangle 1.png";
 export default function LandingProposal() {
   return (
     <>
-      <section className="landing-proposal-container">
+      <section className="landing-proposal-container" id="landing-proposal">
         <div className="landing-proposal-box">
           <div className="landing-proposal-image">
             <img className="landing-proposal-img" src={img} alt="" />

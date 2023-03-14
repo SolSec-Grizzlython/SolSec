@@ -5,6 +5,7 @@ import Modal from "../Modal/Modal";
 import Login from "../Forms/Login";
 import Signup from "../Forms/Signup";
 import { Link } from "react-router-dom";
+// import { deauthenticateUser, isUserAuthenticated } from "../../../js/auth";
 
 const Navbar = () => {
   const [show, setShow] = useState();
@@ -13,27 +14,39 @@ const Navbar = () => {
   const signupForm = <Signup />;
   return (
     <div className={style.container}>
-      <div className={style.title}>SolSec</div>
+      <div><Link className={style.title} to="/">SolSec</Link></div>
       <div className={style.navList}>
         <ul>
-          <li><Link className={style.competitions} to="/competitions">Competitions</Link></li>
-          <li>Submit Proposal</li>
-          <li>Apply to be a Judge</li>
+          <li><a className={style.title} href="#landing-competition">Competitions</a></li>
+          <li><a className={style.title} href="#landing-proposal">Submit Proposal</a></li>
+          <li><a className={style.title} href="#landing-judge">Apply to be a Judge</a></li>
           <li>
             <div className={style.discord}>
               <img src={logo} alt="discord_logo" />
               Join our Discord
             </div>
           </li>
+
+          {/* {isUserAuthenticated() ? (
+            <a id="logout-btn" className="hamburger-menu-item" onClick={() => deauthenticateUser()}>Logout</a>
+          ) : (
+            <>
+             <li>
+            <button className={style.login} onClick={() => setShow(true)}>
+              <Link className={style.loginbtn} to="/login">
+              Login
+              </Link>
+            </button>
+          </li>
+            </>
+          )} */}
+
           <li>
             <button className={style.login} onClick={() => setShow(true)}>
               <Link className={style.loginbtn} to="/login">
               Login
               </Link>
             </button>
-            {/* <Modal show={show} closeModal={() => setShow(false)} heading="Login" content={loginForm}/>
-            <Modal show={open} closeModal={() => setopen(false)} heading="Signup" content={signupForm}/> */}
-
           </li>
         </ul>
       </div>
