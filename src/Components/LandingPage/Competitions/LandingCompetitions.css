@@ -31,3 +31,18 @@
 .landing-competitions-cards{
     margin-top: 15vh;
 }
+.event-right-arrow-btn{
+  color: white;
+	cursor: pointer;
+	width: auto;
+	height: 4.3vh;
+	position: absolute;
+  /* left: 50%; */
+  right: 0;
+  top: 4vh;
+}
+.landing-competitions-head{
+  position: relative;
+  display: inline-block;
+  width: 37vw;
+}
