@@ -33,7 +33,7 @@
   margin-top: 3vh;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 .header-container {
   display: flex;
@@ -53,4 +53,10 @@
     font-size: 1rem;
     line-height: 1.8em;
     margin: 0 auto;
+}
+.card-mapping{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 90vw;
 }
