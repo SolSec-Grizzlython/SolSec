@@ -14,6 +14,7 @@ import Modal from "./Components/Modal/Modal";
 import Competitions from "./Components/Competitions/Competitions";
 import Compete from "./Components/Compete/Compete";
 import FindingForm from "./Components/Forms/FindingForm";
+import Judging from "./Components/Forms/Judging";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
       <Route path="/competitions" element={<Competitions />} />
       <Route path="/compete" element={<Compete />} />
       <Route path="/findingform" element={<FindingForm />} />
+      <Route path="/landingjudge" element={<Judging />} />
     </Routes>
   );
 }

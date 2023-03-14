@@ -42,6 +42,7 @@
   margin-top: 3vh;
 }
 .landing-judge-btn {
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -63,4 +64,9 @@
   order: 0;
   flex-grow: 0;
   margin-top: 4vh;
+}
+.landing-judge-btn:hover{
+  color: #661b32;
+  background-color: white;
+  border: #661b32;
 }

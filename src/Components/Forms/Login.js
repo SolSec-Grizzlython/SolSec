@@ -31,10 +31,12 @@ const Login = () => {
   return (
     <div className={style.modal}>
       <div className={style.modalContent}>
-        <Link to="/" className={style.close}>
-          &times;
-        </Link>
-        <h1>Login</h1>
+        <div className={style.header}>
+          <h1>Login</h1>
+          <Link to="/" className={style.close}>
+            &times;
+          </Link>
+        </div>
         <section>
           {" "}
           <div>
@@ -55,8 +57,9 @@ const Login = () => {
               <button className={style.loginBtn} type="submit">
                 Login
               </button>
+
               <p className={style.signup}>
-                Don't have an account? <Link to="/signup">Sign Up</Link>
+                Don't have an account? <Link to="/signup" className={style.didntSign}>Sign Up</Link>
               </p>
             </form>
           </div>

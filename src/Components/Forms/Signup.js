@@ -29,16 +29,19 @@ const Register = () => {
       .catch((err) => {
         console.log(err.response.data.message, ", status", err.response.status);
       });
-      navigate("/");
+    navigate("/");
   };
 
   return (
     <div className={style.modal}>
       <div className={style.modalContent}>
-        <Link className={style.close} to="/">
-          &times;
-        </Link>
-        <h1>Signup</h1>
+        <div className={style.header}>
+          <h1>Signup</h1>
+          <Link className={style.close} to="/">
+            &times;
+          </Link>
+        </div>
+
         <section>
           {" "}
           <div>
@@ -67,14 +70,19 @@ const Register = () => {
                 placeholder="Enter Your Password"
                 onChange={(e) => setPassword(e.target.value)}
               />
-
               <label>Role*</label>
-
+              <select
+                onChange={(e) => setRole(e.target.value)}
+              >
+                <option value="protocol">Protocol</option>
+                <option value="auditor">Auditor</option>
+                <option value="judge">Judge</option>
+              </select>
               <button className={style.loginBtn} type="submit">
-                Submit
+                Sign Up
               </button>
-              <p>
-                Already have an account? <Link to="/login">Login</Link>
+              <p className={style.signup}>
+                Already have an account? <Link className={style.didntSign} to="/login">Login</Link>
               </p>
             </form>
           </div>

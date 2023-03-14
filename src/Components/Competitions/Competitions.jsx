@@ -1,10 +1,13 @@
 import React from "react";
 import Navbar from "../Navbar/Navbar";
 import "./Competitions.css";
+
 import CompetitionCard from "./CompetitionCards/CompetitionCard";
 
+
 export default function Competitions() {
- 
+
+
   return (
     <>
       <Navbar />
@@ -19,7 +22,7 @@ export default function Competitions() {
                 </div>
               </div>
               <div className="competitions-card">
-                  <CompetitionCard />
+                <CompetitionCard />
               </div>
             </div>
             <div className="competitions-info">
