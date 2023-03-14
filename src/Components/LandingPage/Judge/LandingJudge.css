@@ -8,6 +8,7 @@
   position: relative;
   width: 80vw;
   height: 50vh;
+  margin-top: 5vh;
 }
 .landing-judge-image {
   position: relative;
@@ -15,6 +16,7 @@
 .landing-judge-img {
   position: absolute;
   height: 50vh;
+  left: 5vw;
 }
 .landing-judge-details {
   position: absolute;

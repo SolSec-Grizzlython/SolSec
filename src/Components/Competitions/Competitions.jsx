@@ -6,7 +6,22 @@ import CompetitionCard from "./CompetitionCards/CompetitionCard";
 
 
 export default function Competitions() {
-
+  const placeholderData = [
+    {
+      heading: "AB",
+      prize: "70000",
+      startdate: "Starts On: 26 Jun, 2021 03:00 PM",
+      duration: " Duration: 12days",
+      desc: "ajdkghjkah",
+    },
+    {
+      heading: "CD",
+      prize: "70000",
+      startdate: "Starts On: 26 Jun, 2021 03:00 PM",
+      duration: " Duration: 12days",
+      desc: "ajdkghjkah",
+    },
+  ];
 
   return (
     <>
@@ -23,36 +38,79 @@ export default function Competitions() {
               </div>
               <div className="competitions-card">
                 <CompetitionCard />
-              </div>
-            </div>
-            <div className="competitions-info">
-              <div className="competition-header-card">
-                <div className="header-container">
-                  <p className="header-content">Practice Competitions</p>
+                <div className="card-mapping">
+                  {placeholderData.map((contest) => (
+                    <div className="competitions-card">
+                      <CompetitionCard
+                        heading={contest.heading}
+                        prize={contest.prize}
+                        startdate={contest.startdate}
+                        duration={contest.duration}
+                        desc={contest.desc}
+                      />
+                    </div>
+                  ))}
                 </div>
               </div>
-              <div className="competitions-card">
-                <CompetitionCard />
-              </div>
-            </div>
-            <div className="competitions-info">
-              <div className="competition-header-card">
-                <div className="header-container">
-                  <p className="header-content">Upcoming Competitions</p>
+              <div className="competitions-info">
+                <div className="competition-header-card">
+                  <div className="header-container">
+                    <p className="header-content">Practice Competitions</p>
+                  </div>
+                </div>
+                <div className="card-mapping">
+                  {placeholderData.map((contest) => (
+                    <div className="competitions-card">
+                      <CompetitionCard
+                        heading={contest.heading}
+                        prize={contest.prize}
+                        startdate={contest.startdate}
+                        duration={contest.duration}
+                        desc={contest.desc}
+                      />
+                    </div>
+                  ))}
                 </div>
               </div>
-              <div className="competitions-card">
-                <CompetitionCard />
-              </div>
-            </div>
-            <div className="competitions-info">
-              <div className="competition-header-card">
-                <div className="header-container">
-                  <p className="header-content">Past Competitions</p>
+              <div className="competitions-info">
+                <div className="competition-header-card">
+                  <div className="header-container">
+                    <p className="header-content">Upcoming Competitions</p>
+                  </div>
+                </div>
+                <div className="card-mapping">
+                  {placeholderData.map((contest) => (
+                    <div className="competitions-card">
+                      <CompetitionCard
+                        heading={contest.heading}
+                        prize={contest.prize}
+                        startdate={contest.startdate}
+                        duration={contest.duration}
+                        desc={contest.desc}
+                      />
+                    </div>
+                  ))}
                 </div>
               </div>
-              <div className="competitions-card">
-                <CompetitionCard />
+              <div className="competitions-info">
+                <div className="competition-header-card">
+                  <div className="header-container">
+                    <p className="header-content">Past Competitions</p>
+                  </div>
+                </div>
+                <div className="card-mapping">
+                  {placeholderData.map((contest) => (
+                    <div className="competitions-card">
+                      <CompetitionCard
+                        heading={contest.heading}
+                        prize={contest.prize}
+                        startdate={contest.startdate}
+                        duration={contest.duration}
+                        desc={contest.desc}
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

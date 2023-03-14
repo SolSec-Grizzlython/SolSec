@@ -34,7 +34,7 @@
   margin-top: 3vh;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 .header-container {
   display: flex;
@@ -55,8 +55,9 @@
     line-height: 1.8em;
     margin: 0 auto;
 }
-.scrollMenu{
+.card-mapping{
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
+  width: 90vw;
 }
-

@@ -1,4 +1,4 @@
-.competitions-card-container {
+.competition-card-container {
   display: flex;
   flex-direction: row;
   /* justify-content: center; */
@@ -9,15 +9,15 @@
   width: 33vw;
   height: 27vh;
 }
-.competitions-card-img {
+.competition-card-img {
   width: 12vw;
   height: 22vh;
   margin: 1rem;
 }
-.competitions-card-details {
+.competition-card-details {
   margin: 2vh 0;
 }
-.competitions-card-name {
+.competition-card-name {
   font-family: "Nunito Sans";
   font-style: normal;
   font-weight: 600;
@@ -27,7 +27,7 @@
   align-items: center;
   color: rgba(255, 255, 255, 0.8);
 }
-.competitions-card-content {
+.competition-card-content {
   font-family: "Nunito Sans";
   font-style: normal;
   font-weight: 400;
