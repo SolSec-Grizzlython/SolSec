@@ -6,3 +6,11 @@
     align-items: center;
     flex-direction: column;
 }
+.heading h1{
+    font-size: 3rem;
+    margin: 2rem 0 1rem 0;
+}
+.heading p{
+    width: 80%;
+    margin: 2rem 0;
+}
