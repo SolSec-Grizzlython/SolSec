@@ -1,22 +1,56 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import Navbar from "../Navbar/Navbar";
 import "./Competitions.css";
 import CompetitionCard from "./CompetitionCards/CompetitionCard";
 
 export default function Competitions() {
+  const [contests, setContests] = React.useState([]);
+  const [ongoingContests, setOngoingContests] = React.useState([]);
+  const [upcomingContests, setUpcomingContests] = React.useState([]);
+  const [pastContests, setPastContests] = React.useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:4000/contest/getAll')
+    .then((res) => {
+        console.log("Hereeeee");
+        console.log(res.data.data.contests);
+        setContests(res.data.data.contests );
+        res.data.data.contests.filter((contest) => {
+          // console.log("Ongoing contests are ",ongoingContests);
+          // console.log("Upcoming contests are ",upcomingContests);
+          // console.log("Past contests are ",pastContests);
+          if(contest.contestStatus === 3 && ongoingContests.length < 2) {
+            setOngoingContests(ongoingContests => [...ongoingContests, contest]);
+          }
+          else if(contest.contestStatus === 2) {
+            setUpcomingContests(upcomingContests => [...upcomingContests, contest]);
+          }
+          else if(contest.contestStatus === 6) {
+            setPastContests(pastContests => [...pastContests, contest]);
+          }
+        }
+    )}
+    )
+
+    .catch((err) => {
+        console.log(err);
+    });
+}, []);
+
   const placeholderData = [
     {
       heading: "AB",
       prize: "70000",
-      startdate: "Starts On: 26 Jun, 2021 03:00 PM",
-      duration: " Duration: 12days",
+      startdate: "26 Jun, 2021 03:00 PM",
+      duration: " 12",
       desc: "ajdkghjkah",
     },
     {
       heading: "CD",
       prize: "70000",
-      startdate: "Starts On: 26 Jun, 2021 03:00 PM",
-      duration: " Duration: 12days",
+      startdate: "26 Jun, 2021 03:00 PM",
+      duration: " 12",
       desc: "ajdkghjkah",
     },
   ];
@@ -35,14 +69,14 @@ export default function Competitions() {
                 </div>
               </div>
               <div className="card-mapping">
-                {placeholderData.map((contest) => (
+                {ongoingContests.map((contest) => (
                   <div className="competitions-card">
                     <CompetitionCard
-                      heading={contest.heading}
-                      prize={contest.prize}
-                      startdate={contest.startdate}
+                      heading={contest.name}
+                      prize={contest.prizePool}
+                      startdate={contest.startDate}
                       duration={contest.duration}
-                      desc={contest.desc}
+                      desc={contest.description}
                     />
                   </div>
                 ))}
@@ -75,14 +109,14 @@ export default function Competitions() {
                 </div>
               </div>
               <div className="card-mapping">
-                {placeholderData.map((contest) => (
+                {upcomingContests.map((contest) => (
                   <div className="competitions-card">
                     <CompetitionCard
-                      heading={contest.heading}
-                      prize={contest.prize}
-                      startdate={contest.startdate}
+                      heading={contest.name}
+                      prize={contest.prizePool}
+                      startdate={contest.startDate}
                       duration={contest.duration}
-                      desc={contest.desc}
+                      desc={contest.description}
                     />
                   </div>
                 ))}
@@ -95,14 +129,14 @@ export default function Competitions() {
                 </div>
               </div>
               <div className="card-mapping">
-                {placeholderData.map((contest) => (
+                {pastContests.map((contest) => (
                   <div className="competitions-card">
                     <CompetitionCard
-                      heading={contest.heading}
-                      prize={contest.prize}
-                      startdate={contest.startdate}
+                      heading={contest.name}
+                      prize={contest.prizePool}
+                      startdate={contest.startDate}
                       duration={contest.duration}
-                      desc={contest.desc}
+                      desc={contest.description}
                     />
                   </div>
                 ))}
