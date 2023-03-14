@@ -1,0 +1,56 @@
+.compete-container {
+  background-color: #0c0c18;
+  width: auto;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.compete-box {
+  width: 90vw;
+  height: 90vh;
+}
+.competition-name {
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 76px;
+  display: flex;
+  align-items: center;
+  color: #bdbdbf;
+}
+.protocol-name {
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 49px;
+  display: flex;
+  align-items: center;
+  color: #bcbcbf;
+}
+.competition-status {
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 27px;
+  color: #181822;
+
+  display: inline-block;
+  padding: 4px 10px;
+  gap: 4px;
+  background: #a4a4a4;
+  border-radius: 4px;
+  margin-top: 1vh;
+}
+.competition-details{
+    border: 2px solid white;
+    width: 90vw;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}

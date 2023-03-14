@@ -1,15 +1,15 @@
 .competitions-container {
   background-color: #0c0c18;
   width: auto;
-  height: 100vh;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .start-competing-container {
   width: 90vw;
-  height: 100vh;
-  margin-top: 13vh;
+  height: auto;
+  margin-top: 7vh;
 }
 .competition-heading {
   font-family: "Nunito Sans";
@@ -20,15 +20,37 @@
   color: rgba(233, 233, 233, 0.8);
 }
 .competitions-box{
-  height: 100vh;
+  height: auto;
 }
 .competitions-info{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 5vh;
+  margin-top: 3vh;
 }
 .competitions-card{
   margin-top: 3vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.header-container {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  background: #1f1f2b;
+  border-radius: 0.25rem;
+  width: 90vw;
+  height: 4vh;
+}
+.header-content{
+    font-family: "Nunito Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.8em;
+    margin: 0 auto;
 }

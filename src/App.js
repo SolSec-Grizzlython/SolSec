@@ -12,6 +12,7 @@ import Login from "./Components/Forms/Login";
 import Signup from "./Components/Forms/Signup";
 import Modal from "./Components/Modal/Modal";
 import Competitions from "./Components/Competitions/Competitions";
+import Compete from "./Components/Compete/Compete";
 function App() {
   return (
     <Routes>
@@ -23,6 +24,8 @@ function App() {
       <Route path="/contests" Component={Contests} />
       <Route path="/contest/:id" Component={Contest}></Route>
       <Route path="/createContest" Component={StartProposal} />
+      <Route path="/competitions" element={<Competitions/>}/>
+      <Route path="/compete" element={<Compete/>}/>
     </Routes>
   );
 }
