@@ -1,0 +1,19 @@
+.header-container {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  background: #1f1f2b;
+  border-radius: 0.25rem;
+  width: 90vw;
+  height: 4vh;
+}
+.header-content{
+    font-family: "Nunito Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.8em;
+    margin: 0 auto;
+}

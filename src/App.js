@@ -11,6 +11,7 @@ import Register from "./Components/Forms/Signup";
 import Login from "./Components/Forms/Login";
 import Signup from "./Components/Forms/Signup";
 import Modal from "./Components/Modal/Modal";
+import Competitions from "./Components/Competitions/Competitions";
 function App() {
   return (
     <Routes>

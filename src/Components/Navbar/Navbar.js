@@ -16,7 +16,7 @@ const Navbar = () => {
       <div className={style.title}>SolSec</div>
       <div className={style.navList}>
         <ul>
-          <li>Competitions</li>
+          <li><Link className={style.competitions} to="/competitions">Competitions</Link></li>
           <li>Submit Proposal</li>
           <li>Apply to be a Judge</li>
           <li>
@@ -27,7 +27,7 @@ const Navbar = () => {
           </li>
           <li>
             <button className={style.login} onClick={() => setShow(true)}>
-              <Link to="/login">
+              <Link className={style.loginbtn} to="/login">
               Login
               </Link>
             </button>
