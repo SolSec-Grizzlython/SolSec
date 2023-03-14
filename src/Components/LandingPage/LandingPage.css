@@ -1,7 +1,7 @@
 .landingPage-container {
   background-color: #0c0c18;
   width: auto;
-  height: 100vh;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,16 +9,14 @@
 .landing-about-container {
   width: 65vw;
   height: 75vh;
-  margin-top: 15vh;
+  margin-top: 8vh;
   position: relative;
 }
 .landing-about-white-box {
   position: absolute;
   right: 0;
-  width: 43vw;
-  height: 50vh;
-  background: #c4c4c4;
-  border-radius: 1.25rem;
+  width: 30vw;
+  height: 40vh;
 }
 .landing-about-content {
   position: absolute;
@@ -44,6 +42,7 @@
 .landing-about-left-box {
   display: flex;
   justify-content: center;
+  align-items: center;
   color: white;
   width: 17vw;
   height: 35vh;
@@ -102,6 +101,8 @@
   color: rgba(255, 255, 255, 0.6);
   position: absolute;
   top: 15vh;
+  width: 14vw;
+  text-align: center;
 }
 .landing-about-center-box-heading{
   font-family: "Nunito Sans";
@@ -122,6 +123,7 @@
   color: rgba(255, 255, 255, 0.6);
   position: absolute;
   top: 16vh;
+  text-align: center;
 }
 .landing-about-box-arrow{
   position: absolute;
@@ -147,4 +149,7 @@
     ),
     #0c0c18;
   box-shadow: 0px 0px 36px rgba(0, 0, 0, 0.71);
+}
+.arrow{
+  color: white;
 }

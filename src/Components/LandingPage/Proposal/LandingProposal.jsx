@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./LandingProposal.css";
-import img from "./Images/Rectangle 1.png";
+import img from "./Images/Group 1906.png";
 
 export default function LandingProposal() {
   return (

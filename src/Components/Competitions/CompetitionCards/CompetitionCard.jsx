@@ -10,13 +10,13 @@ const CompetitionCard = () => {
     enddate: " Ends On: 26 Jun, 2021 03:00 PM",
   };
   return (
-    <div className="competitions-card-container">
+    <div className="competition-card-container">
       <div className="competitions-card-images">
-        <img className="competitions-card-img" src={img} alt="" />
+        <img className="competition-card-img" src={img} alt="" />
       </div>
-      <div className="competitions-card-details">
-        <div className="competitions-card-name">{placeholderData.heading}</div>
-        <div className="competitions-card-content">
+      <div className="competition-card-details">
+        <div className="competition-card-name">{placeholderData.heading}</div>
+        <div className="competition-card-content">
           ${placeholderData.prize} <br />
           {placeholderData.startdate} <br /> {placeholderData.enddate}
         </div>
