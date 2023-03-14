@@ -63,3 +63,17 @@
   border: none;
   margin-top: 3vh;
 }
+
+.competition-desc{
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  display: flex;
+  align-items: center;
+  color: #939393;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
