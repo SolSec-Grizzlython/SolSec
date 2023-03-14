@@ -2,23 +2,26 @@
   background-image: url("./Images/Rectangle 317.svg");
   background-repeat: no-repeat;
   background-size: 100%;
+  background-position: center;
   overflow-x: hidden;
   height: 100vh;
   width: auto;
-  margin-top: 35vh;
+  /* margin-top: 35vh; */
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .landing-proposal-box {
   width: 87vw;
-  height: 60vh;
+  height: 70vh;
 }
 .landing-proposal-image {
   position: relative;
 }
 .landing-proposal-img {
   position: absolute;
-  right: 0;
+  right: 2vw;
+  top: 5vh;
 }
 .landing-proposal-details {
   position: relative;

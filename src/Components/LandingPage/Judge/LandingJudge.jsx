@@ -1,5 +1,5 @@
 import "./LandingJudge.css";
-import img from "./Images/Rectangle 2.png";
+import img from "./Images/Product quality-pana 1.png";
 
 export default function LandingJudge() {
     return (
