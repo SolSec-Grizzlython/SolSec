@@ -46,6 +46,7 @@
   margin-top: 4vh;
 }
 .landing-proposal-btn {
+  cursor: pointer;
   font-family: "Nunito Sans";
   font-style: normal;
   font-weight: 700;
@@ -69,4 +70,7 @@
   border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 0.25rem;
   margin-top: 5vh;
+}
+.landing-proposal-btn:hover{
+  background-color: #882544;
 }
