@@ -23,6 +23,11 @@
   margin: 0 1rem;
 }
 
+.competitions{
+  text-decoration: none;
+  color: white;
+}
+
 .discord {
   display: flex;
   flex-direction: row;
@@ -43,5 +48,10 @@
   border-radius: 4px;
   padding: 4px 24px;
   background: #882544;
+  color: white;
+}
+
+.loginbtn{
+  text-decoration: none;
   color: white;
 }

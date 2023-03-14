@@ -21,7 +21,7 @@ const Login = () => {
         localStorage.setItem("token", res.data.token);
       })
       .catch((err) => {
-        console.log(err.response.data.message, ", status", err.response.status);
+        console.log(err.response, ", status", err.response);
       });
   };
 

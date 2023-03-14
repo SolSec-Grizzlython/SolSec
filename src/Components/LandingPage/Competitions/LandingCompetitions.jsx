@@ -1,5 +1,6 @@
 import "./LandingCompetitions.css";
 import CompetitionsCard from "./CompetitionsCards/CompetitionsCard";
+import { BsArrowRight } from "react-icons/bs";
 
 export default function LandingCompetitions(){
     return(
