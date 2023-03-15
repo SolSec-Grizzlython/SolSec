@@ -12,10 +12,16 @@ export default function LandingProposal() {
           </div>
           <div className="landing-proposal-details">
             <div className="landing-proposal-heading">Submit your proposal</div>
-            <div className="landing-proposal-content">Submit your proposal by staking a minimal amount, if you are a start up and don’t have the required money to hold a competition, you can apply for our “” </div>
-            <form action="/createContest">
-              <button className="landing-proposal-btn">Submit your proposal</button>
-            </form>
+            <div className="landing-proposal-content">
+              Submit your proposal by staking a minimal amount, if you are a
+              start up and don’t have the required money to hold a competition,
+              you can apply for our “”{" "}
+            </div>
+              <Link to="/createContest">
+                <button className="landing-proposal-btn">
+                  Submit your proposal
+                </button>
+              </Link>
           </div>
         </div>
       </section>

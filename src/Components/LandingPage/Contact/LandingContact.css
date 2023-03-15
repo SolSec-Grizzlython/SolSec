@@ -19,3 +19,21 @@
   left: 7vw;
   margin-top: 10vh;
 }
+.socials{
+  position: absolute;
+  left: 7vw;
+  margin-top: 20vh; 
+  display: flex;
+  flex-direction: column;
+  padding: 2vh 2vw;
+}
+.social-name{
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  line-height: 1.7em;
+
+}
+.social-name:hover{
+  color: #661b32;
+}

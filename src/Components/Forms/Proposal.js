@@ -70,7 +70,7 @@ const Proposal = () => {
                             <InputBox onChange={(e) => setDuration(e.target.value)}/>
                         </div>
                     </div>
-                    <h1>% Distribution</h1>
+                    {/* <h1>% Distribution</h1>
                     <div className={style.aboutComp}>
                         <div>
                             <label> High Findings</label>
@@ -92,7 +92,7 @@ const Proposal = () => {
                             <label>Gas Report Link</label>
                             <InputBox />
                         </div>
-                    </div>
+                    </div> */}
 
                     <div className={style.footer}>
                         <button type="submit" className={style.footerleft}>Submit</button>

@@ -33,7 +33,7 @@ export default function LandingPage() {
             <div className="landing-about-right-box">
               <h1 className="landing-about-box-heading">Be a Judge</h1>
               <p className="landing-about-box-content">Review vulnerabilities and submit an audit report!</p>
-              <div className="landing-about-box-arrow"><Link className="arrow" to="/"><BsArrowRight /></Link></div>
+              <div className="landing-about-box-arrow"><Link className="arrow" to="/landingJudge"><BsArrowRight /></Link></div>
             </div>
           </div>
         </div>

@@ -23,7 +23,7 @@ const Navbar = () => {
           <li>
             <div className={style.discord}>
               <img src={logo} alt="discord_logo" />
-              Join our Discord
+              <a href="https://discord.gg/KqPCHwKR" className={style.discord_link}>Join our Discord</a>
             </div>
           </li>
 
