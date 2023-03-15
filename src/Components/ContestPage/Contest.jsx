@@ -45,7 +45,7 @@ export default function Contest() {
     }
 
     const participate = () => {
-        axios.patch(`http://localhost:4000/auditor/participate/${id}`)
+        axios.patch(`http://localhost:4000/auditor/participate/${id}/${currentUser._id}`)
         .then((res) => {
             console.log(res);
         })

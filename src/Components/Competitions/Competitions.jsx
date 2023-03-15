@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Navbar from "../Navbar/Navbar";
 import "./Competitions.css";
+import { Link } from 'react-router-dom';
 
 import CompetitionCard from "./CompetitionCards/CompetitionCard";
 
@@ -72,6 +73,7 @@ export default function Competitions() {
               </div>
               <div className="card-mapping">
                 {ongoingContests.map((contest) => (
+                  <Link to={"/compete/"+ contest._id}>{contest.name}
                   <div className="competitions-card">
                     <CompetitionCard
                       heading={contest.name}
@@ -81,6 +83,7 @@ export default function Competitions() {
                       desc={contest.description}
                     />
                   </div>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -112,6 +115,7 @@ export default function Competitions() {
               </div>
               <div className="card-mapping">
                 {upcomingContests.map((contest) => (
+                  <Link to={"/compete/"+ contest._id}>{contest.name}  
                   <div className="competitions-card">
                     <CompetitionCard
                       heading={contest.name}
@@ -121,6 +125,7 @@ export default function Competitions() {
                       desc={contest.description}
                     />
                   </div>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -132,6 +137,7 @@ export default function Competitions() {
               </div>
               <div className="card-mapping">
                 {pastContests.map((contest) => (
+                  <Link to={"/compete/"+ contest._id}>{contest.name} 
                   <div className="competitions-card">
                     <CompetitionCard
                       heading={contest.name}
@@ -141,6 +147,7 @@ export default function Competitions() {
                       desc={contest.description}
                     />
                   </div>
+                  </Link>
                 ))}
               </div>
             </div>

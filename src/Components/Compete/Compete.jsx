@@ -1,7 +1,10 @@
 import Navbar from "../Navbar/Navbar";
+import React, { useState, useEffect } from 'react';
 import "./Compete.css";
 import image from "./ssl-2890762__340.jpeg";
 import { Link } from "react-router-dom";
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
 export default function Compete() {
   const Data = {
@@ -16,14 +19,71 @@ export default function Compete() {
     QAawards:"$200 USDC",
     gasAwards:"$0 USDC"
   }
+
+    const [contest, setContest] = useState("");
+    const [contestStatus, setContestStatus] = useState("");
+    const [currentUser, setCurrentUser] = useState("");
+    const { id } = useParams();
+
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+        axios.post(`http://localhost:4000/contest/get/${id}`,{contest, headers: {Authorization: `Bearer ${token}`}})
+        .then((res) => {
+            setContest(res.data.data.contest);
+            setContestStatus(res.data.data.contest.contestStatus);
+            console.log(res.data.user);
+            setCurrentUser(res.data.user);
+            console.log("this is the c",contest);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+    }
+    , []);
+
+    const startContest = () => {
+        axios.patch(`http://localhost:4000/contest/start/${id}`)
+        .then((res) => {
+            setContestStatus(res.data.data.contest.contestStatus);
+
+            console.log(res);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+    }
+    const endContest = () => {
+        axios.patch(`http://localhost:4000/contest/stop/${id}`)
+        .then((res) => {
+            setContestStatus(res.data.data.contest.contestStatus);
+            console.log(res);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+    }
+
+    const participate = () => {
+        axios.patch(`http://localhost:4000/auditor/participate/${id}/${currentUser._id}`)
+        .then((res) => {
+            console.log(res);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+    }
   return (
     <>
       <Navbar />
       <section className="compete-container">
         <div className="compete-box">
-          <div className="competition-name">Name of the competition</div>
-          <div className="protocol-name">Protocol name</div>
-          <div className="competition-status">PAST</div>
+          <div className="competition-name">{contest.name}</div>
+
+          {contestStatus >= 6 ? (<div className="competition-status">PAST</div>): (null)}
+          {contestStatus === 3 ? (<div className="competition-status">Live</div>): (null)}
+          {contestStatus >1 && contestStatus<3 ? (<div className="competition-status">Upcoming</div>): (null)}
+
+          {/* <div className="competition-status">PAST</div> */}
           <div className="competition-details">
             <div className="protocol-details">
               <img className="protocol-img" src={image} alt="" />
@@ -39,26 +99,28 @@ export default function Compete() {
                   </div>
                 </div>
                 <div className="note-header">Note</div>
-                <div className="proposal-detail-content"> For this contest, gas optimizations are out of scope. The zkSync team will not be awarding prize funds for gas-specific submissions. For this contest, while the abs.com is out of scope, zkSync team may reward an additional bounty for valid bugs found in it. Such bounty if any will not come from the prize pool, but will be paid on top. Automated Findings / Publicly Known Issues. Automated findings output for the contest can be found  within an hour of contest opening. Anything included in the automated findings output is considered a publicly known issue and is ineligible for awards.</div>
+                <div className="proposal-detail-content"> {contest.description}</div>
               </div>
             </div>
             <div className="price-details">
-              <div className="pool-prize">Prize Pool: {Data.prize}</div>
+              <div className="pool-prize">Prize Pool: ${contest.prizePool}</div>
               <div className="competition-dates">
                 <div className="vertical-line"></div>
                 <div className="competition-duration">
                   {" "}
-                  Start Date: {Data.startdate} <br /> End Date: {Data.enddate}{" "}
-                  <br /> Duration: {Data.duration}{" "}
+                  Start Date: {contest.startDate} <br /> {" "}
+                   Duration: {contest.duration}{" "}
                 </div>
               </div>
               <div className="buttons">
-                <button className="findings">
+              {contestStatus>1 && contestStatus < 3 && currentUser.role === 'auditor' ? (<button className="findings" onClick={participate}>Participate</button>) : (null)}
+                {contestStatus === 3 && currentUser.role === 'auditor' ? (<button className="findings" onClick={participate}>
                   <Link className="findingform" to="/findingform">
                     Submit Findings
                   </Link>
-                </button>
-                <button className="repository">View Repository</button>
+                </button>) : (null)}
+                <a href={`//${contest.repoLink}`}><button className="repository">View Repository</button></a>
+                
               </div>
             </div>
           </div>

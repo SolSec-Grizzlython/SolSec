@@ -28,7 +28,7 @@ function App() {
       <Route path="/contest/:id" Component={Contest}></Route>
       <Route path="/createContest" Component={StartProposal} />
       <Route path="/competitions" element={<Competitions />} />
-      <Route path="/compete" element={<Compete />} />
+      <Route path="/compete/:id" element={<Compete />} />
       <Route path="/findingform" element={<FindingForm />} />
       <Route path="/landingjudge" element={<Judging />} />
     </Routes>
