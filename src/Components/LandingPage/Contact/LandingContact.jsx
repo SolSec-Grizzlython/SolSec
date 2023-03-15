@@ -6,10 +6,10 @@ export default function LandingContact() {
       <section className="landing-contact-container">
         <div className="landing-contact-heading">Contact Us</div>
         <div className="socials">
-          <a className="social-name" href="https://discord.gg/KqPCHwKR">Discord</a>
-          <a className="social-name" href="https://twitter.com/SolSecDAO">Twitter</a>
-          <a className="social-name" href="https://github.com/SolSec-Grizzlython/SolSec-monorepo">Github</a>
-          <a className="social-name" href="">Documentation</a>
+          <a className="social-name" target="_blank" href="https://discord.gg/KqPCHwKR">Discord</a>
+          <a className="social-name" target="_blank" href="https://twitter.com/SolSecDAO">Twitter</a>
+          <a className="social-name" target="_blank" href="https://github.com/SolSec-Grizzlython/SolSec-monorepo">Github</a>
+          <a className="social-name" target="_blank" href="https://solsec.gitbook.io/solsec/">Documentation</a>
         </div>
       </section>
     </>

@@ -8,6 +8,7 @@
   border-radius: 0.75rem;
   width: 37vw;
   height: 23vh;
+  cursor: pointer;
 }
 .competitions-card-images{
   display: flex;
