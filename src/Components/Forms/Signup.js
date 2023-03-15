@@ -16,7 +16,7 @@ const Register = () => {
     console.log("called1");
     e.preventDefault();
     axios
-      .post("http://localhost:4000/auth/signup", {
+      .post("https://blocsoc.iitr.ac.in/solsec/auth/signup", {
         email: email,
         password: password,
         name: name,
@@ -71,9 +71,7 @@ const Register = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
               <label>Role*</label>
-              <select
-                onChange={(e) => setRole(e.target.value)}
-              >
+              <select onChange={(e) => setRole(e.target.value)}>
                 <option value="protocol">Protocol</option>
                 <option value="auditor">Auditor</option>
                 <option value="judge">Judge</option>
@@ -82,7 +80,10 @@ const Register = () => {
                 Sign Up
               </button>
               <p className={style.signup}>
-                Already have an account? <Link className={style.didntSign} to="/login">Login</Link>
+                Already have an account?{" "}
+                <Link className={style.didntSign} to="/login">
+                  Login
+                </Link>
               </p>
             </form>
           </div>

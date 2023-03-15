@@ -13,7 +13,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:4000/auth/login", {
+      .post("https://blocsoc.iitr.ac.in/solsec/auth/login", {
         email: email,
         password: password,
       })
@@ -59,7 +59,10 @@ const Login = () => {
               </button>
 
               <p className={style.signup}>
-                Don't have an account? <Link to="/signup" className={style.didntSign}>Sign Up</Link>
+                Don't have an account?{" "}
+                <Link to="/signup" className={style.didntSign}>
+                  Sign Up
+                </Link>
               </p>
             </form>
           </div>

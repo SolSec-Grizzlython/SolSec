@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import Navbar from "../Navbar/Navbar";
 import "./Competitions.css";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 import CompetitionCard from "./CompetitionCards/CompetitionCard";
-
 
 export default function Competitions() {
   const [contests, setContests] = React.useState([]);
@@ -14,32 +13,36 @@ export default function Competitions() {
   const [pastContests, setPastContests] = React.useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:4000/contest/getAll')
-    .then((res) => {
+    axios
+      .get("https://blocsoc.iitr.ac.in/solsec/contest/getAll")
+      .then((res) => {
         console.log("Hereeeee");
         console.log(res.data.data.contests);
-        setContests(res.data.data.contests );
+        setContests(res.data.data.contests);
         res.data.data.contests.filter((contest) => {
           // console.log("Ongoing contests are ",ongoingContests);
           // console.log("Upcoming contests are ",upcomingContests);
           // console.log("Past contests are ",pastContests);
-          if(contest.contestStatus === 3 && ongoingContests.length < 2) {
-            setOngoingContests(ongoingContests => [...ongoingContests, contest]);
+          if (contest.contestStatus === 3 && ongoingContests.length < 2) {
+            setOngoingContests((ongoingContests) => [
+              ...ongoingContests,
+              contest,
+            ]);
+          } else if (contest.contestStatus === 2) {
+            setUpcomingContests((upcomingContests) => [
+              ...upcomingContests,
+              contest,
+            ]);
+          } else if (contest.contestStatus === 6) {
+            setPastContests((pastContests) => [...pastContests, contest]);
           }
-          else if(contest.contestStatus === 2) {
-            setUpcomingContests(upcomingContests => [...upcomingContests, contest]);
-          }
-          else if(contest.contestStatus === 6) {
-            setPastContests(pastContests => [...pastContests, contest]);
-          }
-        }
-    )}
-    )
+        });
+      })
 
-    .catch((err) => {
+      .catch((err) => {
         console.log(err);
-    });
-}, []);
+      });
+  }, []);
 
   const placeholderData = [
     {
@@ -73,16 +76,16 @@ export default function Competitions() {
               </div>
               <div className="card-mapping">
                 {ongoingContests.map((contest) => (
-                  <Link to={"/compete/"+ contest._id}>
-                  <div className="competitions-card">
-                    <CompetitionCard
-                      heading={contest.name}
-                      prize={contest.prizePool}
-                      startdate={contest.startDate}
-                      duration={contest.duration}
-                      desc={contest.description}
-                    />
-                  </div>
+                  <Link to={"/compete/" + contest._id}>
+                    <div className="competitions-card">
+                      <CompetitionCard
+                        heading={contest.name}
+                        prize={contest.prizePool}
+                        startdate={contest.startDate}
+                        duration={contest.duration}
+                        desc={contest.description}
+                      />
+                    </div>
                   </Link>
                 ))}
               </div>
@@ -115,16 +118,16 @@ export default function Competitions() {
               </div>
               <div className="card-mapping">
                 {upcomingContests.map((contest) => (
-                  <Link to={"/compete/"+ contest._id}>  
-                  <div className="competitions-card">
-                    <CompetitionCard
-                      heading={contest.name}
-                      prize={contest.prizePool}
-                      startdate={contest.startDate}
-                      duration={contest.duration}
-                      desc={contest.description}
-                    />
-                  </div>
+                  <Link to={"/compete/" + contest._id}>
+                    <div className="competitions-card">
+                      <CompetitionCard
+                        heading={contest.name}
+                        prize={contest.prizePool}
+                        startdate={contest.startDate}
+                        duration={contest.duration}
+                        desc={contest.description}
+                      />
+                    </div>
                   </Link>
                 ))}
               </div>
@@ -137,16 +140,16 @@ export default function Competitions() {
               </div>
               <div className="card-mapping">
                 {pastContests.map((contest) => (
-                  <Link to={"/compete/"+ contest._id}>
-                  <div className="competitions-card">
-                    <CompetitionCard
-                      heading={contest.name}
-                      prize={contest.prizePool}
-                      startdate={contest.startDate}
-                      duration={contest.duration}
-                      desc={contest.description}
-                    />
-                  </div>
+                  <Link to={"/compete/" + contest._id}>
+                    <div className="competitions-card">
+                      <CompetitionCard
+                        heading={contest.name}
+                        prize={contest.prizePool}
+                        startdate={contest.startDate}
+                        duration={contest.duration}
+                        desc={contest.description}
+                      />
+                    </div>
                   </Link>
                 ))}
               </div>
