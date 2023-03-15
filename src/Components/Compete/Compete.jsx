@@ -1,7 +1,7 @@
 import Navbar from "../Navbar/Navbar";
 import React, { useState, useEffect } from 'react';
 import "./Compete.css";
-import image from "./ssl-2890762__340.jpeg";
+import image from "./grizzlythonLogo.jpeg";
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
@@ -109,7 +109,7 @@ export default function Compete() {
                 <div className="competition-duration">
                   {" "}
                   Start Date: {contest.startDate} <br /> {" "}
-                   Duration: {contest.duration}{" "}
+                   Duration: {contest.duration} Days{" "}
                 </div>
               </div>
               <div className="buttons">

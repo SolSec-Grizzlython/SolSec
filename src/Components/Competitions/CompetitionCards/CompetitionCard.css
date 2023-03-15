@@ -16,6 +16,7 @@
 }
 .competition-card-details {
   margin: 2vh 0;
+  text-decoration: none;
 }
 .competition-card-name {
   font-family: "Nunito Sans";
@@ -26,6 +27,7 @@
   display: flex;
   align-items: center;
   color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
 }
 .competition-card-content {
   font-family: "Nunito Sans";

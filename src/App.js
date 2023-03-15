@@ -30,7 +30,7 @@ function App() {
       <Route path="/competitions" element={<Competitions />} />
       <Route path="/compete/:id" element={<Compete />} />
       <Route path="/findingform" element={<FindingForm />} />
-      <Route path="/landingjudge" element={<Judging />} />
+      <Route path="/landingjudge" element={<Judging />} />  
     </Routes>
   );
 }

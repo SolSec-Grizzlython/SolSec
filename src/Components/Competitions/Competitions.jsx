@@ -73,7 +73,7 @@ export default function Competitions() {
               </div>
               <div className="card-mapping">
                 {ongoingContests.map((contest) => (
-                  <Link to={"/compete/"+ contest._id}>{contest.name}
+                  <Link to={"/compete/"+ contest._id}>
                   <div className="competitions-card">
                     <CompetitionCard
                       heading={contest.name}
@@ -115,7 +115,7 @@ export default function Competitions() {
               </div>
               <div className="card-mapping">
                 {upcomingContests.map((contest) => (
-                  <Link to={"/compete/"+ contest._id}>{contest.name}  
+                  <Link to={"/compete/"+ contest._id}>  
                   <div className="competitions-card">
                     <CompetitionCard
                       heading={contest.name}
@@ -137,7 +137,7 @@ export default function Competitions() {
               </div>
               <div className="card-mapping">
                 {pastContests.map((contest) => (
-                  <Link to={"/compete/"+ contest._id}>{contest.name} 
+                  <Link to={"/compete/"+ contest._id}>
                   <div className="competitions-card">
                     <CompetitionCard
                       heading={contest.name}

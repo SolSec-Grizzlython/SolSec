@@ -1,6 +1,6 @@
 import "./CompetitionCard.css";
 import React from "react";
-import img from "./download.png";
+import img from "./solanaLogo.png";
 
 const CompetitionCard = (props) => {
   
